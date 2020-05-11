@@ -13,7 +13,19 @@ class Person(Base):
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
+    first_name = Column(String(250), nullable=False)
+    last_name = Column(String(250), nullable=False)
+    gender = Column(String(10), nullable=True)
+
+class Posting(Base):
+    __tablename__ = 'person'
+    # Here we define columns for the table person
+    # Notice that each column is also a normal Python instance attribute.
+    id = Column(Integer, primary_key=True)
+    author = Column(String(250), nullable=False)
+    date = Column(String(250), nullable=False)
+    image = Column(String(500), nullable=True)
+
 
 class Address(Base):
     __tablename__ = 'address'
